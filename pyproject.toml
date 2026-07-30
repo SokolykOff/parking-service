@@ -3,14 +3,19 @@ line-length = 88
 target-version = ['py311']
 extend-exclude = '''
 /(
-    \.eggs
-  | \.git
-  | \.venv
-  | \.pytest_cache
+  .eggs
+  | .git
+  | .venv
+  | .pytest_cache
   | build
   | dist
 )/
 '''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["app"]
 
 [tool.mypy]
 python_version = "3.11"

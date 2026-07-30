@@ -1,6 +1,7 @@
 from flask import Flask
+
+from app.config import DevelopmentConfig, ProductionConfig, TestingConfig
 from app.extensions import db
-from app.config import DevelopmentConfig, TestingConfig, ProductionConfig
 
 
 def create_app(config_name: str = "development") -> Flask:

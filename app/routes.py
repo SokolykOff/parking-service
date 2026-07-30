@@ -1,7 +1,9 @@
-from flask import Blueprint, request, jsonify
-from app.extensions import db
-from app.models import Client, Parking, ClientParking
 from datetime import datetime, timezone
+
+from flask import Blueprint, jsonify, request
+
+from app.extensions import db
+from app.models import Client, ClientParking, Parking
 
 bp = Blueprint("api", __name__, url_prefix="/")
 
