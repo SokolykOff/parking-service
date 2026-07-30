@@ -1,6 +1,13 @@
+
 Flask
 Flask-SQLAlchemy
 pytest
 pytest-cov
 factory-boy
 faker
+black==26.5.1
+flake8
+mypy
+isort
+bandit
+psycopg2-binary
