@@ -91,17 +91,20 @@ def park_in():
     parking.count_available_places -= 1
 
     client_parking = ClientParking(
-        client_id=client.id,
-        parking_id=parking.id,
-        time_in=datetime.now(timezone.utc)
+        client_id=client.id, parking_id=parking.id, time_in=datetime.now(timezone.utc)
     )
     db.session.add(client_parking)
     db.session.commit()
 
-    return jsonify({
-        "message": "Parked successfully",
-        "client_parking": client_parking.to_dict()
-    }), 201
+    return (
+        jsonify(
+            {
+                "message": "Parked successfully",
+                "client_parking": client_parking.to_dict(),
+            }
+        ),
+        201,
+    )
 
 
 @bp.route("/client_parkings", methods=["DELETE"])
@@ -119,7 +122,7 @@ def park_out():
     client_parking = ClientParking.query.filter(
         ClientParking.client_id == client_id,
         ClientParking.parking_id == parking_id,
-        ClientParking.time_out.is_(None)
+        ClientParking.time_out.is_(None),
     ).first()
 
     if not client_parking:
@@ -136,7 +139,12 @@ def park_out():
 
     db.session.commit()
 
-    return jsonify({
-        "message": "Exited successfully",
-        "client_parking": client_parking.to_dict()
-    }), 200
+    return (
+        jsonify(
+            {
+                "message": "Exited successfully",
+                "client_parking": client_parking.to_dict(),
+            }
+        ),
+        200,
+    )

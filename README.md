@@ -3,6 +3,31 @@
 Тестовый проект для практики 29.5. Сервис для учёта клиентов, парковок и времени пребывания.
 
 ---
+📁 Структура проекта
+
+parking-service/
+├── app/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── extensions.py
+│   ├── models.py
+│   └── routes.py
+├── tests/
+│   ├── conftest.py
+│   ├── factories.py
+│   └── test_api.py
+├── .flake8
+├── .gitignore
+├── .gitlab-ci.yml
+├── .isort.cfg
+├── .github/workflows/ci.yml
+├── pyproject.toml
+├── requirements-dev.txt
+├── requirements.txt
+├── init_db.py
+├── run.py
+└── README.md
+
 
 ## 🔧 Стек технологий
 

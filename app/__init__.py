@@ -2,6 +2,7 @@ from flask import Flask
 from app.extensions import db
 from app.config import DevelopmentConfig, TestingConfig, ProductionConfig
 
+
 def create_app(config_name: str = "development") -> Flask:
     app = Flask(__name__)
     if config_name == "testing":
@@ -14,6 +15,7 @@ def create_app(config_name: str = "development") -> Flask:
     db.init_app(app)
 
     from app.routes import bp
+
     app.register_blueprint(bp)
 
     return app

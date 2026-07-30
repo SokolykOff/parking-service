@@ -2,6 +2,7 @@ from datetime import datetime, timezone
 from sqlalchemy import UniqueConstraint
 from app.extensions import db
 
+
 class Client(db.Model):
     __tablename__ = "client"
     id = db.Column(db.Integer, primary_key=True)
