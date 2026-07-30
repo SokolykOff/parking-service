@@ -4,7 +4,7 @@ pytest
 pytest-cov
 factory-boy
 faker
-black
+black==26.5.1
 flake8
 mypy
 isort
