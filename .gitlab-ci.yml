@@ -1,0 +1,28 @@
+image: python:3.11
+
+stages:
+  - lint
+  - test
+
+before_script:
+  - pip install -r requirements-dev.txt
+
+flake8:
+  stage: lint
+  script:
+    - flake8 . --max-line-length=88 --statistics
+
+black:
+  stage: lint
+  script:
+    - black --check .
+
+mypy:
+  stage: lint
+  script:
+    - mypy . --ignore-missing-imports
+
+pytest:
+  stage: test
+  script:
+    - pytest -v --cov=.
