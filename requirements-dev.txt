@@ -1,0 +1,12 @@
+Flask
+Flask-SQLAlchemy
+pytest
+pytest-cov
+factory-boy
+faker
+black
+flake8
+mypy
+isort
+bandit
+psycopg2-binary
