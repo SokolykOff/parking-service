@@ -1,7 +1,7 @@
 import os
 
 
-class Config:
+# noqa: F401class Config:
     SECRET_KEY = os.getenv("SECRET_KEY", "dev-secret-key")
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
